@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>Grammar Practice · IELTS & TOEFL · VClass</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      background: #f5f9fe;
+      color: #0a2b3e;
+      padding: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #0a2b3e;
+      border-bottom: 4px solid #1e7e6c;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    .sub {
+      color: #2c3e66;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 20px 0 30px;
+      background: #e8edf5;
+      padding: 12px;
+      border-radius: 60px;
+    }
+    .menu button {
+      background: transparent;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #0a2b3e;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .menu button.active, .menu button:hover {
+      background: #1e7e6c;
+      color: white;
+    }
+    .menu button.active {
+      box-shadow: 0 4px 10px rgba(30, 126, 108, 0.3);
+    }
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 24px;
+      margin: 20px 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      border-left: 6px solid #1e7e6c;
+    }
+    .card-header {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width:700px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+    .btn {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      margin: 4px;
+    }
+    .btn-primary {
+      background: #1e7e6c;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #0e5e4f;
+      transform: scale(0.97);
+    }
+    .btn-secondary {
+      background: #2c3e66;
+      color: white;
+    }
+    .btn-secondary:hover {
+      background: #1f2c4b;
+    }
+    .btn-success {
+      background: #27ae60;
+      color: white;
+    }
+    .btn-success:hover {
+      background: #1e8a4d;
+    }
+    .btn-danger {
+      background: #b03a3a;
+      color: white;
+    }
+    .btn-danger:hover {
+      background: #8a2a2a;
+    }
+    .btn-start {
+      background: #d4a017;
+      color: white;
+      font-size: 1.1rem;
+      padding: 14px 40px;
+    }
+    .btn-start:hover {
+      background: #b88a14;
+      transform: scale(1.02);
+    }
+    .hidden {
+      display: none;
+    }
+    .progress-bar {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 12px;
+      margin: 16px 0;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #1e7e6c;
+      transition: width 0.5s;
+    }
+    .practice-box {
+      background: #f0f4fa;
+      padding: 20px;
+      border-radius: 24px;
+      margin: 16px 0;
+      text-align: left;
+    }
+    .practice-box .question {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #0a2b3e;
+    }
+    .practice-box .category {
+      display: inline-block;
+      background: #1e7e6c20;
+      padding: 4px 16px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .feedback-box {
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 20px;
+      margin-top: 24px;
+      border: 1px solid #e2e8f0;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 700;
+      margin: 4px 8px 4px 0;
+      background: #eef2ff;
+    }
+    .badge-pass {
+      background: #27ae6020;
+      color: #1e8a4d;
+    }
+    .badge-fail {
+      background: #b03a3a20;
+      color: #8a2a2a;
+    }
+    .model-answer {
+      background: #eef2ff;
+      padding: 16px;
+      border-radius: 16px;
+      margin: 12px 0;
+      border-left: 4px solid #2c7da0;
+    }
+    .model-short {
+      background: #eafaf1;
+      padding: 12px 16px;
+      border-radius: 16px;
+      margin: 8px 0;
+      border-left: 4px solid #27ae60;
+    }
+    .model-long {
+      background: #eef2ff;
+      padding: 12px 16px;
+      border-radius: 16px;
+      margin: 8px 0;
+      border-left: 4px solid #2c7da0;
+    }
+    .grammar-tip {
+      background: #fef9e7;
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin: 8px 0;
+      border-left: 4px solid #f1c40f;
+    }
+    .vocab-tip {
+      background: #eafaf1;
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin: 8px 0;
+      border-left: 4px solid #27ae60;
+    }
+    .criteria-tip {
+      background: #e8f0fe;
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin: 8px 0;
+      border-left: 4px solid #1e7e6c;
+    }
+    .level-tag {
+      display: inline-block;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #2c3e6620;
+      color: #2c3e66;
+      margin-right: 6px;
+    }
+    .en {
+      color: #1e7e6c;
+    }
+    .pt {
+      color: #2c3e66;
+    }
+    .bilingual-block {
+      border-bottom: 1px dashed #dce3ec;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+    .bilingual-block .en {
+      display: block;
+    }
+    .bilingual-block .pt {
+      display: block;
+      font-style: italic;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #777;
+      border-top: 1px solid #dce3ec;
+      padding-top: 24px;
+    }
+    .question-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 12px 0;
+      align-items: center;
+    }
+    .audio-player {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #e8f0fe;
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin: 4px 0;
+    }
+    .audio-player button {
+      background: #1e7e6c;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: 0.2s;
+    }
+    .audio-player button:hover {
+      background: #0e5e4f;
+      transform: scale(1.05);
+    }
+    .score-circle {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      line-height: 80px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 10px;
+    }
+    .score-pass {
+      background: #27ae60;
+      color: white;
+    }
+    .score-fail {
+      background: #b03a3a;
+      color: white;
+    }
+    select, textarea, input[type="text"] {
+      font-family: inherit;
+      padding: 10px 14px;
+      border-radius: 16px;
+      border: 2px solid #dce3ec;
+      width: 100%;
+      max-width: 100%;
+    }
+    .flex-center {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+    .highlight {
+      font-weight: 700;
+      color: #1e7e6c;
+    }
+    .highlight-b {
+      font-weight: 700;
+      color: #0a2b3e;
+      background: #fef9e7;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .example-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 12px 0;
+    }
+    @media (max-width:600px) {
+      .example-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .example-item {
+      background: #f8fafc;
+      padding: 14px;
+      border-radius: 16px;
+      border-left: 4px solid #2980b9;
+    }
+    .example-item .level {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #2c3e66;
+      background: #dce3ec;
+      padding: 0 10px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <h1>🎯 Grammar Practice · IELTS & TOEFL</h1>
+  <div class="sub">Pratique com perguntas reais · Dicas e exemplos para níveis <strong>B1 ao C2</strong></div>
+</div>
+
+<!-- MENU -->
+<div class="menu" id="mainMenu">
+  <button class="active" data-section="inicio">🏠 Início</button>
+  <button data-section="pratica">✍️ Prática Livre</button>
+  <button data-section="dicas">💡 Dicas & Estruturas</button>
+  <button onclick="location.reload()">🔄 Reiniciar</button>
+</div>
+
+<!-- SEÇÃO INÍCIO -->
+<div id="section-inicio" class="section-content">
+  <div class="card">
+    <div class="card-header">🏠 Bem-vindo à Prática de Gramática</div>
+    <div class="bilingual-block">
+      <span class="en">Pratique estruturas gramaticais para <strong>IELTS, Cambridge e TOEFL</strong> com perguntas organizadas por categoria. Veja dicas, exemplos por nível e ouça a pronúncia britânica.</span>
+      <span class="pt">Baseado no material "Questions for Practising Your Grammar".</span>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="border-left-color:#2c7da0;">
+        <strong>📌 Categorias incluídas</strong>
+        <ul style="margin-top:8px;list-style:none;">
+          <li>🔹 <span class="highlight">Comparing & Contrasting</span></li>
+          <li>🔸 <span class="highlight">Recent Changes</span> (Present Perfect)</li>
+          <li>🔹 <span class="highlight">Past Experiences</span></li>
+          <li>🔸 <span class="highlight">Frequency</span></li>
+          <li>🔹 <span class="highlight">Hypothetical</span> (would/could)</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left-color:#0b3b60;">
+        <strong>🎯 Como usar</strong>
+        <ul style="margin-top:8px;list-style:none;">
+          <li>1. Escolha uma <span class="highlight">categoria</span></li>
+          <li>2. Leia a <span class="highlight">pergunta</span></li>
+          <li>3. Escreva sua <span class="highlight">resposta</span></li>
+          <li>4. Clique em "Avaliar" para ver <span class="highlight">dicas e exemplos</span> por nível</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <button class="btn btn-start" onclick="goToPractice()">▶ Começar Prática</button>
+    </div>
+  </div>
+</div>
+
+<!-- SEÇÃO PRÁTICA LIVRE -->
+<div id="section-pratica" class="section-content hidden">
+  <div class="card">
+    <div class="card-header">✍️ Prática Livre com Feedback por Nível</div>
+    <p>Escolha uma categoria, responda à pergunta e veja dicas com exemplos para <strong>B1, B2, C1 e C2</strong>.</p>
+    <div style="margin:16px 0;display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+      <label for="categorySelect" style="font-weight:600;">Categoria / Category:</label>
+      <select id="categorySelect" style="padding:8px 14px;border-radius:30px;border:2px solid #dce3ec;flex:1;min-width:160px;">
+        <option value="all">Todas / All</option>
+        <option value="comparing">🔹 Comparing & Contrasting</option>
+        <option value="change">🔸 Recent Changes</option>
+        <option value="past">🔹 Past Experiences</option>
+        <option value="frequency">🔸 Frequency</option>
+        <option value="hypothetical">🔹 Hypothetical</option>
+      </select>
+      <button class="btn btn-secondary" onclick="loadRandomPractice()">🔀 Nova Pergunta</button>
+    </div>
+    <div id="practiceArea">
+      <div class="practice-box">
+        <div id="practiceCategory" class="category">Categoria</div>
+        <div id="practiceQuestion" class="question">Clique em "Nova Pergunta" para começar</div>
+        <div class="audio-player">
+          <button onclick="speakPractice()" title="Ouvir com voz britânica">🔊</button>
+          <span style="font-size:0.85rem;">Ouvir pergunta (voz Britânica)</span>
+        </div>
+      </div>
+      <textarea id="practiceAnswer" rows="4" placeholder="Escreva sua resposta aqui..." style="width:100%;padding:12px;border-radius:16px;border:2px solid #dce3ec;margin:12px 0;font-size:1rem;"></textarea>
+      <button class="btn btn-primary" onclick="evaluatePractice()">📊 Avaliar / Ver dicas e exemplos</button>
+      <div id="practiceFeedback" class="feedback-box hidden"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SEÇÃO DICAS -->
+<div id="section-dicas" class="section-content hidden">
+  <div class="card">
+    <div class="card-header">💡 Dicas & Estruturas Gramaticais</div>
+    <div id="dicasContainer">
+      <!-- Comparação -->
+      <div class="model-answer">
+        <h3 style="color:#1e7e6c;">🔹 Comparing & Contrasting</h3>
+        <p>Use <span class="highlight">comparativos, superlativos, <em>as...as</em>, <em>similar to</em>, <em>different from</em></span>.</p>
+        <div class="example-grid">
+          <div class="example-item"><span class="level">B1</span> <em>"I prefer to eat in because it's <span class="highlight-b">much more</span> convenient."</em></div>
+          <div class="example-item"><span class="level">B2</span> <em>"It's <span class="highlight-b">not as expensive</span> as eating out, and the food is <span class="highlight-b">equally</span> tasty."</em></div>
+          <div class="example-item"><span class="level">C1</span> <em>"While eating at home is <span class="highlight-b">undoubtedly more</span> economical, dining out offers a <span class="highlight-b">far superior</span> social experience."</em></div>
+          <div class="example-item"><span class="level">C2</span> <em>"Eating in is <span class="highlight-b">by far the most</span> practical choice, yet the <span class="highlight-b">sheer variety</span> of flavours in restaurants is <span class="highlight-b">virtually unparalleled</span>."</em></div>
+        </div>
+        <div class="vocab-tip"><strong>💡 Vocabulário:</strong> <span class="highlight">much more, far less, equally, slightly, considerably, virtually, by far, nowhere near</span></div>
+      </div>
+      <!-- Recent Changes -->
+      <div class="model-answer">
+        <h3 style="color:#1e7e6c;">🔸 Recent Changes (Present Perfect)</h3>
+        <p>Use <span class="highlight">have/has + past participle</span> ou <span class="highlight">used to + infinitive</span>.</p>
+        <div class="example-grid">
+          <div class="example-item"><span class="level">B1</span> <em>"Yes, <span class="highlight-b">I have become</span> much more health-conscious recently."</em></div>
+          <div class="example-item"><span class="level">B2</span> <em>"<span class="highlight-b">I used to</span> eat a lot of junk food, but <span class="highlight-b">I've switched</span> to a balanced diet."</em></div>
+          <div class="example-item"><span class="level">C1</span> <em>"<span class="highlight-b">Over the past few years</span>, my eating habits <span class="highlight-b">have undergone</span> a complete transformation."</em></div>
+          <div class="example-item"><span class="level">C2</span> <em>"<span class="highlight-b">Having been</span> a fast-food enthusiast, I <span class="highlight-b">have since adopted</span> a plant-based diet, which <span class="highlight-b">has had</span> a profound impact on my wellbeing."</em></div>
+        </div>
+        <div class="vocab-tip"><strong>💡 Vocabulário:</strong> <span class="highlight">recently, lately, over the past, since, for, already, yet, just, ever, never</span></div>
+      </div>
+      <!-- Past Experiences -->
+      <div class="model-answer">
+        <h3 style="color:#1e7e6c;">🔹 Past Experiences</h3>
+        <p>Use <span class="highlight">past simple</span> e <span class="highlight">past continuous</span>.</p>
+        <div class="example-grid">
+          <div class="example-item"><span class="level">B1</span> <em>"<span class="highlight-b">I came</span> here by train. There <span class="highlight-b">were</span> no delays."</em></div>
+          <div class="example-item"><span class="level">B2</span> <em>"<span class="highlight-b">I was taking</span> the train when I <span class="highlight-b">realised</span> I had left my phone at home."</em></div>
+          <div class="example-item"><span class="level">C1</span> <em>"<span class="highlight-b">Had I known</span> about the delays, I <span class="highlight-b">would have taken</span> the bus instead."</em></div>
+          <div class="example-item"><span class="level">C2</span> <em>"<span class="highlight-b">Having travelled</span> extensively by train, I <span class="highlight-b">was well aware</span> of the potential disruptions, yet I <span class="highlight-b">opted</span> for the railway nonetheless."</em></div>
+        </div>
+        <div class="vocab-tip"><strong>💡 Vocabulário:</strong> <span class="highlight">ago, last, yesterday, when, while, as, during, before, after, already, yet</span></div>
+      </div>
+      <!-- Frequency -->
+      <div class="model-answer">
+        <h3 style="color:#1e7e6c;">🔸 Frequency</h3>
+        <p>Use <span class="highlight">advérbios de frequência</span>: <em>always, usually, often, sometimes, rarely, never</em>.</p>
+        <div class="example-grid">
+          <div class="example-item"><span class="level">B1</span> <em>"<span class="highlight-b">I often</span> take the bus. I use it <span class="highlight-b">on a daily basis</span>."</em></div>
+          <div class="example-item"><span class="level">B2</span> <em>"<span class="highlight-b">I rarely</span> drive to work; <span class="highlight-b">I usually</span> cycle or take the tube."</em></div>
+          <div class="example-item"><span class="level">C1</span> <em>"<span class="highlight-b">More often than not</span>, I find myself relying on public transport, <span class="highlight-b">particularly during</span> rush hour."</em></div>
+          <div class="example-item"><span class="level">C2</span> <em>"<span class="highlight-b">In the vast majority of cases</span>, I eschew private vehicles in favour of public transit, <span class="highlight-b">a practice I have maintained</span> for over a decade."</em></div>
+        </div>
+        <div class="vocab-tip"><strong>💡 Vocabulário:</strong> <span class="highlight">always, usually, often, sometimes, occasionally, rarely, never, every day, once a week, on a daily basis, more often than not</span></div>
+      </div>
+      <!-- Hypothetical -->
+      <div class="model-answer">
+        <h3 style="color:#1e7e6c;">🔹 Hypothetical (would/could)</h3>
+        <p>Use <span class="highlight">would/could + infinitive</span> ou <span class="highlight">second conditional</span> (if + past, would + infinitive).</p>
+        <div class="example-grid">
+          <div class="example-item"><span class="level">B1</span> <em>"<span class="highlight-b">If I could</span> go anywhere, I <span class="highlight-b">would visit</span> Thailand."</em></div>
+          <div class="example-item"><span class="level">B2</span> <em>"<span class="highlight-b">I would</span> definitely consider moving abroad <span class="highlight-b">if I were</span> offered a good job."</em></div>
+          <div class="example-item"><span class="level">C1</span> <em>"<span class="highlight-b">Were I</span> to have more free time, I <span class="highlight-b">would undoubtedly</span> take up a new hobby like painting."</em></div>
+          <div class="example-item"><span class="level">C2</span> <em>"<span class="highlight-b">Had I the opportunity</span>, I <span class="highlight-b">would seize</span> the chance to travel the world, <span class="highlight-b">immersing myself</span> in diverse cultures."</em></div>
+        </div>
+        <div class="vocab-tip"><strong>💡 Vocabulário:</strong> <span class="highlight">would, could, might, if I were, were I to, had I, suppose, imagine, in case</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Grammar Practice · IELTS Life Skills & TOEFL · © English VClass<br>
+  <span class="copyright">Edson D'Aguiar</span> • <a href="https://wa.me/5541991725009" target="_blank">VClass English</a>
+</footer>
+
+<script>
+  // ========== BANCO DE PERGUNTAS ==========
+  const questionBank = [
+    // Comparing & contrasting
+    { category: 'comparing', q: 'Do you prefer to eat out or eat at home?', tip: 'Use comparativos/superlativos: "I prefer to eat in because it\'s much more convenient. It\'s also not as expensive as eating out."' },
+    { category: 'comparing', q: 'Do you work better in the mornings or the evenings?', tip: 'Compare: "I work better in the mornings because I\'m more focused."' },
+    { category: 'comparing', q: 'Do you prefer to study in the mornings or evenings?', tip: 'Use "prefer" + noun/gerund: "I prefer studying in the evenings because it\'s quieter."' },
+    { category: 'comparing', q: 'Do you prefer studying or working?', tip: 'Compare activities: "I prefer studying because I enjoy learning new things."' },
+    { category: 'comparing', q: 'Which place do you prefer, the city where you are working/studying now or your hometown?', tip: 'Use comparatives: "I prefer my hometown because it\'s more peaceful than the city."' },
+    { category: 'comparing', q: 'How does your current place of living compare to your hometown?', tip: 'Use "similar to", "different from": "My current city is much bigger than my hometown."' },
+    { category: 'comparing', q: 'Do you prefer to travel alone or with friends/family?', tip: 'Use "prefer" + gerund: "I prefer traveling with friends because it\'s more fun."' },
+    { category: 'comparing', q: 'Do you prefer to spend your free time alone or with other people?', tip: 'Compare: "I prefer spending time with others because I enjoy socializing."' },
+    { category: 'comparing', q: 'Do you prefer casual clothes or formal clothes?', tip: 'Compare: "I prefer casual clothes because they are more comfortable."' },
+    { category: 'comparing', q: 'Do you prefer to read a newspaper or watch TV?', tip: 'Use "prefer" + infinitive: "I prefer to read the newspaper because it\'s more in-depth."' },
+    { category: 'comparing', q: 'Do you prefer team sports or individual sports?', tip: 'Use "prefer" + noun: "I prefer team sports because they are more social."' },
+    { category: 'comparing', q: 'Do you prefer shopping alone or with other people?', tip: 'Compare: "I prefer shopping alone because it\'s faster."' },
+    { category: 'comparing', q: 'What are some differences between men and women shopping?', tip: 'Use "while", "whereas": "Men often shop quickly, whereas women tend to browse more."' },
+    { category: 'comparing', q: 'Do you prefer to watch films alone or with other people?', tip: 'Compare: "I prefer watching films with others to share the experience."' },
+    { category: 'comparing', q: 'Do you prefer to watch films in a cinema or at home?', tip: 'Use comparatives: "I prefer the cinema because of the big screen."' },
+    { category: 'comparing', q: 'What are the differences in the tastes of music of young people and older people?', tip: 'Compare: "Young people often prefer pop music, while older people might prefer classical."' },
+    { category: 'comparing', q: 'Which is more important for you, domestic news or international news?', tip: 'Use superlatives: "International news is more important to me because I like to know what\'s happening globally."' },
+    { category: 'comparing', q: 'Do you prefer to travel by car or use public transport?', tip: 'Compare: "I prefer public transport because it\'s more environmentally friendly."' },
+    { category: 'comparing', q: 'How would you compare learning English to learning other languages?', tip: 'Use "similar to", "different from": "Learning English is different from learning Chinese because of the alphabet."' },
+    { category: 'comparing', q: 'What is more important, eating healthily or doing exercise?', tip: 'Compare: "I think eating healthily is more important because it affects overall health."' },
+    // Recent changes
+    { category: 'change', q: 'Have your eating habits changed in recent years?', tip: 'Use present perfect: "Yes, I have become much more health-conscious recently."' },
+    { category: 'change', q: 'Has your work changed in recent years?', tip: 'Use present perfect: "Yes, I have started working from home more often."' },
+    { category: 'change', q: 'Has your hometown changed much in recent years?', tip: 'Use present perfect: "Yes, it has become much more modern."' },
+    { category: 'change', q: 'Has your home changed in recent years?', tip: 'Use present perfect: "We have renovated the kitchen."' },
+    { category: 'change', q: 'Has the transport situation in your hometown changed in recent years?', tip: 'Use present perfect: "They have built a new metro line."' },
+    { category: 'change', q: 'Has the type of holidays you enjoy changed in the past 10 years?', tip: 'Use present perfect: "I have started to prefer relaxing holidays."' },
+    { category: 'change', q: 'How has the way people spend their free time changed in recent years?', tip: 'Use present perfect: "People have become more interested in digital entertainment."' },
+    { category: 'change', q: 'Have people\'s eating habits changed in your country since you were a child?', tip: 'Use present perfect: "People have started eating more fast food."' },
+    { category: 'change', q: 'Has your routine changed much in recent years?', tip: 'Use present perfect: "I have started exercising regularly."' },
+    { category: 'change', q: 'Has your taste in clothes changed in recent years?', tip: 'Use present perfect: "I have started to prefer more casual clothes."' },
+    // Past
+    { category: 'past', q: 'How did you get here today?', tip: 'Use past simple: "I came here by train. Luckily, there were no delays."' },
+    { category: 'past', q: 'Why did you choose to do the type of work that you do?', tip: 'Use past simple: "I chose this job because I enjoy helping people."' },
+    { category: 'past', q: 'What was your first day of work like?', tip: 'Use past simple: "It was a bit stressful but very exciting."' },
+    { category: 'past', q: 'Why did you choose the subject you are studying?', tip: 'Use past simple: "I chose it because I was always interested in science."' },
+    { category: 'past', q: 'What was your first day at university like?', tip: 'Use past simple: "It was overwhelming but I made friends quickly."' },
+    { category: 'past', q: 'Whereabouts did you grow up?', tip: 'Use past simple: "I grew up in a small town in the countryside."' },
+    { category: 'past', q: 'Why did you move?', tip: 'Use past simple: "I moved because I got a new job."' },
+    { category: 'past', q: 'What was the last place you travelled to?', tip: 'Use past simple: "I went to Italy last summer."' },
+    { category: 'past', q: 'What did you do on your last holiday?', tip: 'Use past simple: "I visited museums and relaxed on the beach."' },
+    // Frequency
+    { category: 'frequency', q: 'Do you often use public transportation?', tip: 'Use adverbs of frequency: "Yes, I do. I take the bus on a daily basis."' },
+    { category: 'frequency', q: 'Do you often travel by train?', tip: 'Use frequency adverbs: "I rarely travel by train."' },
+    { category: 'frequency', q: 'How often do you travel?', tip: 'Use "once a year", "every month": "I travel about twice a year."' },
+    { category: 'frequency', q: 'How often do you meet your friends?', tip: 'Use frequency: "I meet my friends once a week."' },
+    { category: 'frequency', q: 'Do you often talk about the weather?', tip: 'Use frequency: "Yes, we often talk about the weather."' },
+    { category: 'frequency', q: 'How often do you play sports?', tip: 'Use frequency: "I play sports three times a week."' },
+    { category: 'frequency', q: 'How often do you go shopping?', tip: 'Use frequency: "I go shopping once a month."' },
+    { category: 'frequency', q: 'How often do you use the internet?', tip: 'Use frequency: "I use the internet every day."' },
+    // Hypothetical
+    { category: 'hypothetical', q: 'If you could take a holiday anywhere in the world, where would you go?', tip: 'Use would + infinitive: "I would visit Thailand."' },
+    { category: 'hypothetical', q: 'Is there some other work you would prefer to do?', tip: 'Use would + infinitive: "I would prefer to be a teacher."' },
+    { category: 'hypothetical', q: 'If you could change your job or profession, what would you do?', tip: 'Use would + infinitive: "I would become a writer."' },
+    { category: 'hypothetical', q: 'Where else would you like to live?', tip: 'Use would + infinitive: "I would like to live in London."' },
+    { category: 'hypothetical', q: 'How do you think transport in your city could be improved?', tip: 'Use could + infinitive: "It could be improved by adding more bike lanes."' },
+    { category: 'hypothetical', q: 'Which place would you really like to visit?', tip: 'Use would + infinitive: "I would really like to visit Japan."' },
+    { category: 'hypothetical', q: 'What would you do if you had more free time?', tip: 'Use second conditional: "If I had more free time, I would travel more."' },
+    { category: 'hypothetical', q: 'Is there a sport or hobby you would like to try?', tip: 'Use would + infinitive: "I would like to try surfing."' },
+  ];
+
+  // ========== ESTADO ==========
+  let currentPracticeItem = null;
+
+  // ========== MENU ==========
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('#mainMenu button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('#mainMenu button').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const section = this.dataset.section;
+        document.querySelectorAll('.section-content').forEach(el => el.classList.add('hidden'));
+        const target = document.getElementById('section-' + section);
+        if (target) target.classList.remove('hidden');
+        if (section === 'pratica') loadRandomPractice();
+      });
+    });
+    loadRandomPractice();
+  });
+
+  function goToPractice() {
+    document.querySelectorAll('#mainMenu button').forEach(b => b.classList.remove('active'));
+    const btn = document.querySelector('#mainMenu button[data-section="pratica"]');
+    if (btn) btn.classList.add('active');
+    document.querySelectorAll('.section-content').forEach(el => el.classList.add('hidden'));
+    document.getElementById('section-pratica').classList.remove('hidden');
+    loadRandomPractice();
+  }
+
+  // ========== PRÁTICA LIVRE ==========
+  function loadRandomPractice() {
+    const catSelect = document.getElementById('categorySelect');
+    const cat = catSelect.value;
+    let pool = questionBank;
+    if (cat !== 'all') {
+      pool = questionBank.filter(q => q.category === cat);
+    }
+    if (!pool.length) pool = questionBank;
+    const item = pool[Math.floor(Math.random() * pool.length)];
+    currentPracticeItem = item;
+    document.getElementById('practiceQuestion').textContent = item.q;
+    document.getElementById('practiceCategory').textContent = getCategoryLabel(item.category);
+    document.getElementById('practiceAnswer').value = '';
+    document.getElementById('practiceFeedback').classList.add('hidden');
+  }
+
+  function getCategoryLabel(cat) {
+    const map = {
+      'comparing': '🔹 Comparing & Contrasting',
+      'change': '🔸 Recent Changes',
+      'past': '🔹 Past Experiences',
+      'frequency': '🔸 Frequency',
+      'hypothetical': '🔹 Hypothetical'
+    };
+    return map[cat] || cat;
+  }
+
+  // ========== ÁUDIO COM VOZ BRITÂNICA ==========
+  function speakPractice() {
+    if (!currentPracticeItem) return;
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(currentPracticeItem.q);
+      utterance.lang = 'en-GB';
+      utterance.rate = 0.85;
+      utterance.pitch = 1;
+      // Buscar voz britânica
+      const voices = window.speechSynthesis.getVoices();
+      const ukVoice = voices.find(v => v.lang === 'en-GB' || v.lang.startsWith('en-UK'));
+      if (ukVoice) utterance.voice = ukVoice;
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert('Seu navegador não suporta síntese de voz.');
+    }
+  }
+
+  // Carregar vozes antecipadamente
+  if ('speechSynthesis' in window) {
+    speechSynthesis.getVoices();
+    speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+  }
+
+  // ========== AVALIAÇÃO COM EXEMPLOS POR NÍVEL ==========
+  function evaluatePractice() {
+    const answer = document.getElementById('practiceAnswer').value.trim();
+    const fb = document.getElementById('practiceFeedback');
+    if (!answer) {
+      alert('Escreva sua resposta primeiro.');
+      return;
+    }
+    if (!currentPracticeItem) return;
+    fb.classList.remove('hidden');
+
+    const cat = currentPracticeItem.category;
+    const tip = currentPracticeItem.tip;
+
+    // Exemplos diferenciados por nível (B1, B2, C1, C2) baseados na categoria
+    let examples = getLevelExamples(cat);
+
+    let html = `<div class="feedback-box">
+      <h4 style="color:#1e7e6c;margin-bottom:12px;">📊 Feedback e Dicas</h4>
+      <div class="grammar-tip"><strong>📌 Dica principal:</strong> ${tip}</div>
+      <div class="criteria-tip"><strong>🎯 Estrutura sugerida:</strong> ${getStructureTip(cat)}</div>
+      <div style="margin-top:16px;">
+        <strong>📚 Exemplos por nível:</strong>
+        <div class="example-grid">
+          ${examples.map(ex => `
+            <div class="example-item">
+              <span class="level">${ex.level}</span>
+              <em>${ex.text}</em>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="vocab-tip"><strong>💡 Vocabulário útil:</strong> ${getVocabulary(cat)}</div>
+      <div style="margin-top:12px;padding:12px;background:#e8f0fe;border-radius:12px;">
+        <strong>Sua resposta:</strong> "${answer}"
+      </div>
+    </div>`;
+    fb.innerHTML = html;
+    fb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function getLevelExamples(cat) {
+    const examples = {
+      'comparing': [
+        { level: 'B1', text: '"I prefer to eat in because it\'s <span class="highlight-b">much more</span> convenient."' },
+        { level: 'B2', text: '"It\'s <span class="highlight-b">not as expensive</span> as eating out, and the food is <span class="highlight-b">equally</span> tasty."' },
+        { level: 'C1', text: '"While eating at home is <span class="highlight-b">undoubtedly more</span> economical, dining out offers a <span class="highlight-b">far superior</span> social experience."' },
+        { level: 'C2', text: '"Eating in is <span class="highlight-b">by far the most</span> practical choice, yet the <span class="highlight-b">sheer variety</span> of flavours in restaurants is <span class="highlight-b">virtually unparalleled</span>."' }
+      ],
+      'change': [
+        { level: 'B1', text: '"Yes, <span class="highlight-b">I have become</span> much more health-conscious recently."' },
+        { level: 'B2', text: '"<span class="highlight-b">I used to</span> eat a lot of junk food, but <span class="highlight-b">I\'ve switched</span> to a balanced diet."' },
+        { level: 'C1', text: '"<span class="highlight-b">Over the past few years</span>, my eating habits <span class="highlight-b">have undergone</span> a complete transformation."' },
+        { level: 'C2', text: '"<span class="highlight-b">Having been</span> a fast-food enthusiast, I <span class="highlight-b">have since adopted</span> a plant-based diet, which <span class="highlight-b">has had</span> a profound impact on my wellbeing."' }
+      ],
+      'past': [
+        { level: 'B1', text: '"<span class="highlight-b">I came</span> here by train. There <span class="highlight-b">were</span> no delays."' },
+        { level: 'B2', text: '"<span class="highlight-b">I was taking</span> the train when I <span class="highlight-b">realised</span> I had left my phone at home."' },
+        { level: 'C1', text: '"<span class="highlight-b">Had I known</span> about the delays, I <span class="highlight-b">would have taken</span> the bus instead."' },
+        { level: 'C2', text: '"<span class="highlight-b">Having travelled</span> extensively by train, I <span class="highlight-b">was well aware</span> of the potential disruptions, yet I <span class="highlight-b">opted</span> for the railway nonetheless."' }
+      ],
+      'frequency': [
+        { level: 'B1', text: '"<span class="highlight-b">I often</span> take the bus. I use it <span class="highlight-b">on a daily basis</span>."' },
+        { level: 'B2', text: '"<span class="highlight-b">I rarely</span> drive to work; <span class="highlight-b">I usually</span> cycle or take the tube."' },
+        { level: 'C1', text: '"<span class="highlight-b">More often than not</span>, I find myself relying on public transport, <span class="highlight-b">particularly during</span> rush hour."' },
+        { level: 'C2', text: '"<span class="highlight-b">In the vast majority of cases</span>, I eschew private vehicles in favour of public transit, <span class="highlight-b">a practice I have maintained</span> for over a decade."' }
+      ],
+      'hypothetical': [
+        { level: 'B1', text: '"<span class="highlight-b">If I could</span> go anywhere, I <span class="highlight-b">would visit</span> Thailand."' },
+        { level: 'B2', text: '"<span class="highlight-b">I would</span> definitely consider moving abroad <span class="highlight-b">if I were</span> offered a good job."' },
+        { level: 'C1', text: '"<span class="highlight-b">Were I</span> to have more free time, I <span class="highlight-b">would undoubtedly</span> take up a new hobby like painting."' },
+        { level: 'C2', text: '"<span class="highlight-b">Had I the opportunity</span>, I <span class="highlight-b">would seize</span> the chance to travel the world, <span class="highlight-b">immersing myself</span> in diverse cultures."' }
+      ]
+    };
+    return examples[cat] || examples['comparing'];
+  }
+
+  function getStructureTip(cat) {
+    const tips = {
+      'comparing': 'Use comparativos/superlativos ou "as...as", "similar to", "different from".',
+      'change': 'Use present perfect (have/has + past participle) ou "used to".',
+      'past': 'Use past simple para descrever eventos passados. Também pode usar past continuous e past perfect.',
+      'frequency': 'Use advérbios de frequência (always, usually, often, sometimes, rarely, never) e expressões como "once a week".',
+      'hypothetical': 'Use would/could + infinitive ou second conditional (if + past, would + infinitive).'
+    };
+    return tips[cat] || 'Use a estrutura apropriada para a categoria.';
+  }
+
+  function getVocabulary(cat) {
+    const vocab = {
+      'comparing': '<span class="highlight">much more, far less, equally, slightly, considerably, virtually, by far, nowhere near, whereas, while</span>',
+      'change': '<span class="highlight">recently, lately, over the past, since, for, already, yet, just, ever, never, used to, have become</span>',
+      'past': '<span class="highlight">ago, last, yesterday, when, while, as, during, before, after, already, yet, had, would have</span>',
+      'frequency': '<span class="highlight">always, usually, often, sometimes, occasionally, rarely, never, every day, once a week, on a daily basis, more often than not</span>',
+      'hypothetical': '<span class="highlight">would, could, might, if I were, were I to, had I, suppose, imagine, in case, otherwise</span>'
+    };
+    return vocab[cat] || 'Use vocabulário apropriado para a categoria.';
+  }
+
+  // ========== EXPOR FUNÇÕES GLOBAIS ==========
+  window.goToPractice = goToPractice;
+  window.loadRandomPractice = loadRandomPractice;
+  window.speakPractice = speakPractice;
+  window.evaluatePractice = evaluatePractice;
+</script>
+</body>
+</html>
