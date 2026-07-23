@@ -378,6 +378,45 @@
       border-radius: 12px;
       display: inline-block;
     }
+    .answer-highlight {
+      background: #e8f0fe;
+      padding: 10px 14px;
+      border-radius: 12px;
+      margin-top: 10px;
+      border-left: 4px solid #1e7e6c;
+    }
+    .word-order-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 12px 0;
+    }
+    @media (max-width: 600px) {
+      .word-order-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .wo-item {
+      background: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border-left: 4px solid #27ae60;
+    }
+    .wo-item .struct {
+      font-weight: 700;
+      color: #1e7e6c;
+    }
+    .wo-item .ex {
+      display: block;
+      margin-top: 4px;
+      font-style: italic;
+    }
+    .wo-item .ex-pt {
+      display: block;
+      color: #2c3e66;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -402,27 +441,73 @@
       <span class="en">Pratique estruturas gramaticais para <strong>IELTS, Cambridge e TOEFL</strong> com perguntas organizadas por categoria. Veja dicas, exemplos por nível e ouça a pronúncia britânica.</span>
       <span class="pt">Baseado no material "Questions for Practising Your Grammar".</span>
     </div>
-    <div class="grid-2">
-      <div class="card" style="border-left-color:#2c7da0;">
-        <strong>📌 Categorias incluídas</strong>
-        <ul style="margin-top:8px;list-style:none;">
-          <li>🔹 <span class="highlight">Comparing & Contrasting</span></li>
-          <li>🔸 <span class="highlight">Recent Changes</span> (Present Perfect)</li>
-          <li>🔹 <span class="highlight">Past Experiences</span></li>
-          <li>🔸 <span class="highlight">Frequency</span></li>
-          <li>🔹 <span class="highlight">Hypothetical</span> (would/could)</li>
-        </ul>
-      </div>
-      <div class="card" style="border-left-color:#0b3b60;">
-        <strong>🎯 Como usar</strong>
-        <ul style="margin-top:8px;list-style:none;">
-          <li>1. Escolha uma <span class="highlight">categoria</span></li>
-          <li>2. Leia a <span class="highlight">pergunta</span></li>
-          <li>3. Escreva sua <span class="highlight">resposta</span></li>
-          <li>4. Clique em "Avaliar" para ver <span class="highlight">dicas e exemplos</span> por nível</li>
-        </ul>
+
+    <!-- COMO USAR - BILÍNGUE COM WORD ORDER -->
+    <div class="card" style="border-left-color:#2c7da0;margin-top:16px;">
+      <div class="card-header">🎯 Como usar / How to use</div>
+      <ul style="margin-top:8px;list-style:none;padding-left:0;">
+        <li>1. Escolha uma <span class="highlight">categoria</span> / Choose a <span class="highlight">category</span></li>
+        <li>2. Leia a <span class="highlight">pergunta</span> / Read the <span class="highlight">question</span></li>
+        <li>3. Ouça a <span class="highlight">pronúncia britânica</span> / Listen to the <span class="highlight">British pronunciation</span></li>
+        <li>4. Escreva sua <span class="highlight">resposta</span> / Write your <span class="highlight">answer</span></li>
+        <li>5. Clique em "Avaliar" para ver <span class="highlight">dicas e exemplos</span> por nível / Click "Evaluate" to see <span class="highlight">tips and examples</span> by level</li>
+      </ul>
+
+      <!-- WORD ORDER SECTION -->
+      <div style="margin-top:16px;padding-top:16px;border-top:2px dashed #dce3ec;">
+        <h4 style="color:#1e7e6c;margin-bottom:10px;">📌 Ordem das palavras em inglês / Word Order in English</h4>
+        <p style="font-size:0.9rem;margin-bottom:10px;">
+          <span class="en">In English, the basic word order is: <strong>Subject + Verb + Object + Place + Time</strong>.</span>
+          <span class="pt">Em inglês, a ordem básica das palavras é: <strong>Sujeito + Verbo + Objeto + Lugar + Tempo</strong>.</span>
+        </p>
+
+        <div class="word-order-grid">
+          <div class="wo-item">
+            <span class="struct">S + V + O</span>
+            <span class="ex">"I <span class="highlight">like</span> <span class="highlight">pizza</span>."</span>
+            <span class="ex-pt">"Eu <span class="highlight">gosto</span> de <span class="highlight">pizza</span>."</span>
+          </div>
+          <div class="wo-item">
+            <span class="struct">S + V + Place</span>
+            <span class="ex">"I <span class="highlight">work</span> <span class="highlight">in an office</span>."</span>
+            <span class="ex-pt">"Eu <span class="highlight">trabalho</span> <span class="highlight">em um escritório</span>."</span>
+          </div>
+          <div class="wo-item">
+            <span class="struct">S + V + Time</span>
+            <span class="ex">"I <span class="highlight">wake up</span> <span class="highlight">at 7am</span>."</span>
+            <span class="ex-pt">"Eu <span class="highlight">acordo</span> <span class="highlight">às 7h</span>."</span>
+          </div>
+          <div class="wo-item">
+            <span class="struct">S + V + O + Place + Time</span>
+            <span class="ex">"I <span class="highlight">study</span> <span class="highlight">English</span> <span class="highlight">at home</span> <span class="highlight">every day</span>."</span>
+            <span class="ex-pt">"Eu <span class="highlight">estudo</span> <span class="highlight">inglês</span> <span class="highlight">em casa</span> <span class="highlight">todos os dias</span>."</span>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;padding:12px;background:#eef2ff;border-radius:14px;">
+          <p style="font-weight:700;color:#1e7e6c;">❓ Perguntas com "How" / Questions with "How"</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
+            <div><span class="highlight">How + adjective?</span> <em>"How <span class="highlight">big</span> is your house?"</em> <span class="pt">— "Qual o <span class="highlight">tamanho</span> da sua casa?"</span></div>
+            <div><span class="highlight">How + adverb?</span> <em>"How <span class="highlight">often</span> do you travel?"</em> <span class="pt">— "Com que <span class="highlight">frequência</span> você viaja?"</span></div>
+            <div><span class="highlight">How many + countable?</span> <em>"How <span class="highlight">many</span> friends do you have?"</em> <span class="pt">— "Quantos <span class="highlight">(contável)</span> amigos você tem?"</span></div>
+            <div><span class="highlight">How much + uncountable?</span> <em>"How <span class="highlight">much</span> time do you have?"</em> <span class="pt">— "Quanto <span class="highlight">(incontável)</span> tempo você tem?"</span></div>
+            <div><span class="highlight">How long?</span> <em>"How <span class="highlight">long</span> have you studied English?"</em> <span class="pt">— "Há <span class="highlight">quanto tempo</span> você estuda inglês?"</span></div>
+            <div><span class="highlight">How come? (informal)</span> <em>"How <span class="highlight">come</span> you are late?"</em> <span class="pt">— "Por que <span class="highlight">(informal)</span> você está atrasado?"</span></div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;padding:12px;background:#eafaf1;border-radius:14px;">
+          <p style="font-weight:700;color:#1e7e6c;">📌 Exemplos completos / Complete examples</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
+            <div><span class="highlight">Why?</span> <em>"Why do you like it?"</em> <span class="pt">— "Por que você gosta disso?"</span></div>
+            <div><span class="highlight">How long?</span> <em>"How long have you lived here?"</em> <span class="pt">— "Há quanto tempo você mora aqui?"</span></div>
+            <div><span class="highlight">How many?</span> <em>"How many people live with you?"</em> <span class="pt">— "Quantas pessoas moram com você?"</span></div>
+            <div><span class="highlight">How much?</span> <em>"How much does it cost?"</em> <span class="pt">— "Quanto custa?"</span></div>
+          </div>
+        </div>
       </div>
     </div>
+
     <div style="text-align:center;margin-top:20px;">
       <button class="btn btn-start" onclick="goToPractice()">▶ Começar Prática</button>
     </div>
@@ -666,7 +751,6 @@
       utterance.lang = 'en-GB';
       utterance.rate = 0.85;
       utterance.pitch = 1;
-      // Buscar voz britânica
       const voices = window.speechSynthesis.getVoices();
       const ukVoice = voices.find(v => v.lang === 'en-GB' || v.lang.startsWith('en-UK'));
       if (ukVoice) utterance.voice = ukVoice;
@@ -676,13 +760,12 @@
     }
   }
 
-  // Carregar vozes antecipadamente
   if ('speechSynthesis' in window) {
     speechSynthesis.getVoices();
     speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
   }
 
-  // ========== AVALIAÇÃO COM EXEMPLOS POR NÍVEL ==========
+  // ========== AVALIAÇÃO COM EXEMPLOS PERSONALIZADOS ==========
   function evaluatePractice() {
     const answer = document.getElementById('practiceAnswer').value.trim();
     const fb = document.getElementById('practiceFeedback');
@@ -696,26 +779,58 @@
     const cat = currentPracticeItem.category;
     const tip = currentPracticeItem.tip;
 
-    // Exemplos diferenciados por nível (B1, B2, C1, C2) baseados na categoria
-    let examples = getLevelExamples(cat);
+    // Análise da resposta
+    const words = answer.split(/\s+/).length;
+    const hasBecause = /because|since|as|so|therefore|thus|hence|consequently|accordingly|as a result|due to|owing to|thanks to|for this reason|that's why/.test(answer.toLowerCase());
+    const hasAdjective = /\b(interesting|boring|expensive|cheap|easy|difficult|important|relaxing|good|bad|nice|great|terrible|wonderful|horrible|beautiful|ugly|fast|slow|big|small|new|old|young|hot|cold|warm|cool|busy|quiet|peaceful|noisy|healthy|delicious|tasty|comfortable|convenient|fun|exciting|fascinating|remarkable|outstanding|extraordinary|profound|significant|considerable|unparalleled|superior|inferior)\b/i.test(answer);
+    const hasAdverb = /\b(usually|generally|sometimes|often|really|quite|very|always|never|hardly|almost|already|also|just|still|even|finally|soon|then|there|here|everywhere|now|today|tomorrow|yesterday|everyday|weekly|monthly|yearly|undoubtedly|virtually|considerably|significantly|particularly|especially|merely|barely|scarcely)\b/i.test(answer);
+    const hasConnector = /\b(however|moreover|furthermore|consequently|on the other hand|in addition|nevertheless|as a result|for instance|from my perspective|to be honest|well|actually|firstly|secondly|finally|in conclusion|whereas|while|although|though|despite|in spite of|regardless|nonetheless|accordingly|hence|thus|therefore)\b/i.test(answer);
+
+    let level = 'B1';
+    let structureAdvice = '';
+
+    if (words >= 30 && hasConnector && hasAdjective && hasAdverb) {
+      level = 'C2';
+      structureAdvice = 'Excelente! Sua resposta tem estrutura avançada com conectores, adjetivos e advérbios sofisticados.';
+    } else if (words >= 22 && hasBecause && hasAdjective && hasAdverb) {
+      level = 'C1';
+      structureAdvice = 'Ótimo! Você usou uma estrutura complexa com "because", adjetivos e advérbios. Tente adicionar conectores como "however" ou "moreover".';
+    } else if (words >= 15 && hasBecause && hasAdjective) {
+      level = 'B2';
+      structureAdvice = 'Bom trabalho! Você usou "because" e adjetivos. Para chegar ao C1, tente adicionar advérbios e conectores.';
+    } else if (words >= 10 && hasBecause) {
+      level = 'B1';
+      structureAdvice = 'Boa resposta! Você usou "because" para explicar. Tente adicionar mais detalhes com adjetivos e advérbios.';
+    } else {
+      structureAdvice = 'Tente escrever uma resposta mais completa com pelo menos 10 palavras. Use "because" para explicar.';
+    }
+
+    // Buscar exemplos específicos para esta pergunta
+    let examples = getExamplesForQuestion(currentPracticeItem);
 
     let html = `<div class="feedback-box">
       <h4 style="color:#1e7e6c;margin-bottom:12px;">📊 Feedback e Dicas</h4>
+      <div><span class="badge">📝 ${words} palavras</span><span class="badge">🎯 Nível sugerido: ${level}</span></div>
       <div class="grammar-tip"><strong>📌 Dica principal:</strong> ${tip}</div>
-      <div class="criteria-tip"><strong>🎯 Estrutura sugerida:</strong> ${getStructureTip(cat)}</div>
+      <div class="criteria-tip"><strong>🎯 Estrutura:</strong> ${structureAdvice}</div>
+
       <div style="margin-top:16px;">
-        <strong>📚 Exemplos por nível:</strong>
+        <strong>📚 Exemplos de resposta para esta pergunta (B1, B2, C1, C2):</strong>
         <div class="example-grid">
           ${examples.map(ex => `
             <div class="example-item">
               <span class="level">${ex.level}</span>
-              <em>${ex.text}</em>
+              <div><span class="en"><strong>English:</strong> ${ex.en}</span></div>
+              <div><span class="pt"><strong>Português:</strong> ${ex.pt}</span></div>
+              ${ex.analysis ? `<div style="margin-top:4px;font-size:0.85rem;color:#2c3e66;"><em>📖 ${ex.analysis}</em></div>` : ''}
             </div>
           `).join('')}
         </div>
       </div>
-      <div class="vocab-tip"><strong>💡 Vocabulário útil:</strong> ${getVocabulary(cat)}</div>
-      <div style="margin-top:12px;padding:12px;background:#e8f0fe;border-radius:12px;">
+
+      <div class="vocab-tip"><strong>💡 Vocabulário útil para esta categoria (${getCategoryLabel(cat)}):</strong> ${getVocabulary(cat)}</div>
+
+      <div class="answer-highlight">
         <strong>Sua resposta:</strong> "${answer}"
       </div>
     </div>`;
@@ -723,40 +838,145 @@
     fb.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function getLevelExamples(cat) {
-    const examples = {
-      'comparing': [
-        { level: 'B1', text: '"I prefer to eat in because it\'s <span class="highlight-b">much more</span> convenient."' },
-        { level: 'B2', text: '"It\'s <span class="highlight-b">not as expensive</span> as eating out, and the food is <span class="highlight-b">equally</span> tasty."' },
-        { level: 'C1', text: '"While eating at home is <span class="highlight-b">undoubtedly more</span> economical, dining out offers a <span class="highlight-b">far superior</span> social experience."' },
-        { level: 'C2', text: '"Eating in is <span class="highlight-b">by far the most</span> practical choice, yet the <span class="highlight-b">sheer variety</span> of flavours in restaurants is <span class="highlight-b">virtually unparalleled</span>."' }
-      ],
-      'change': [
-        { level: 'B1', text: '"Yes, <span class="highlight-b">I have become</span> much more health-conscious recently."' },
-        { level: 'B2', text: '"<span class="highlight-b">I used to</span> eat a lot of junk food, but <span class="highlight-b">I\'ve switched</span> to a balanced diet."' },
-        { level: 'C1', text: '"<span class="highlight-b">Over the past few years</span>, my eating habits <span class="highlight-b">have undergone</span> a complete transformation."' },
-        { level: 'C2', text: '"<span class="highlight-b">Having been</span> a fast-food enthusiast, I <span class="highlight-b">have since adopted</span> a plant-based diet, which <span class="highlight-b">has had</span> a profound impact on my wellbeing."' }
-      ],
-      'past': [
-        { level: 'B1', text: '"<span class="highlight-b">I came</span> here by train. There <span class="highlight-b">were</span> no delays."' },
-        { level: 'B2', text: '"<span class="highlight-b">I was taking</span> the train when I <span class="highlight-b">realised</span> I had left my phone at home."' },
-        { level: 'C1', text: '"<span class="highlight-b">Had I known</span> about the delays, I <span class="highlight-b">would have taken</span> the bus instead."' },
-        { level: 'C2', text: '"<span class="highlight-b">Having travelled</span> extensively by train, I <span class="highlight-b">was well aware</span> of the potential disruptions, yet I <span class="highlight-b">opted</span> for the railway nonetheless."' }
-      ],
-      'frequency': [
-        { level: 'B1', text: '"<span class="highlight-b">I often</span> take the bus. I use it <span class="highlight-b">on a daily basis</span>."' },
-        { level: 'B2', text: '"<span class="highlight-b">I rarely</span> drive to work; <span class="highlight-b">I usually</span> cycle or take the tube."' },
-        { level: 'C1', text: '"<span class="highlight-b">More often than not</span>, I find myself relying on public transport, <span class="highlight-b">particularly during</span> rush hour."' },
-        { level: 'C2', text: '"<span class="highlight-b">In the vast majority of cases</span>, I eschew private vehicles in favour of public transit, <span class="highlight-b">a practice I have maintained</span> for over a decade."' }
-      ],
-      'hypothetical': [
-        { level: 'B1', text: '"<span class="highlight-b">If I could</span> go anywhere, I <span class="highlight-b">would visit</span> Thailand."' },
-        { level: 'B2', text: '"<span class="highlight-b">I would</span> definitely consider moving abroad <span class="highlight-b">if I were</span> offered a good job."' },
-        { level: 'C1', text: '"<span class="highlight-b">Were I</span> to have more free time, I <span class="highlight-b">would undoubtedly</span> take up a new hobby like painting."' },
-        { level: 'C2', text: '"<span class="highlight-b">Had I the opportunity</span>, I <span class="highlight-b">would seize</span> the chance to travel the world, <span class="highlight-b">immersing myself</span> in diverse cultures."' }
-      ]
+  // ========== FUNÇÃO PARA GERAR EXEMPLOS ESPECÍFICOS ==========
+  function getExamplesForQuestion(item) {
+    const cat = item.category;
+    const q = item.q.toLowerCase();
+
+    // Dicionário de exemplos específicos por pergunta (níveis B1, B2, C1, C2)
+    const specificExamples = {
+      'comparing': {
+        'do you prefer to eat out or eat at home': [
+          { level: 'B1', en: 'I prefer eating at home because it\'s <span class="highlight-b">much more</span> convenient.', pt: 'Prefiro comer em casa porque é <span class="highlight-b">muito mais</span> conveniente.', analysis: 'Uso básico de "much more" para comparação.' },
+          { level: 'B2', en: 'I tend to eat at home as it\'s <span class="highlight-b">not as expensive</span> as dining out, and the food is <span class="highlight-b">equally</span> delicious.', pt: 'Costumo comer em casa, pois não é <span class="highlight-b">tão caro</span> quanto comer fora, e a comida é <span class="highlight-b">igualmente</span> deliciosa.', analysis: 'Usa "not as...as" e "equally" para comparações mais sofisticadas.' },
+          { level: 'C1', en: 'While eating at home is <span class="highlight-b">undoubtedly more</span> economical, dining out offers a <span class="highlight-b">far superior</span> social experience.', pt: 'Embora comer em casa seja <span class="highlight-b">indubitavelmente mais</span> econômico, comer fora oferece uma experiência social <span class="highlight-b">muito superior</span>.', analysis: 'Usa "while", "undoubtedly more" e "far superior" para contraste elegante.' },
+          { level: 'C2', en: 'Eating in is <span class="highlight-b">by far the most</span> practical choice, yet the <span class="highlight-b">sheer variety</span> of flavours in restaurants is <span class="highlight-b">virtually unparalleled</span>.', pt: 'Comer em casa é <span class="highlight-b">de longe a escolha mais</span> prática, mas a <span class="highlight-b">imensa variedade</span> de sabores em restaurantes é <span class="highlight-b">praticamente inigualável</span>.', analysis: 'Usa "by far the most", "sheer variety" e "virtually unparalleled" para expressões de nível C2.' }
+        ],
+        'do you work better in the mornings or the evenings': [
+          { level: 'B1', en: 'I work better in the mornings because I\'m <span class="highlight-b">more focused</span>.', pt: 'Trabalho melhor de manhã porque estou <span class="highlight-b">mais focado</span>.', analysis: 'Comparação simples com "more focused".' },
+          { level: 'B2', en: 'I find that I\'m <span class="highlight-b">significantly more</span> productive in the mornings, as my mind is <span class="highlight-b">considerably sharper</span>.', pt: 'Descubro que sou <span class="highlight-b">significativamente mais</span> produtivo pela manhã, pois minha mente é <span class="highlight-b">consideravelmente mais</span> afiada.', analysis: 'Usa "significantly more" e "considerably sharper" para comparações mais refinadas.' },
+          { level: 'C1', en: 'I am <span class="highlight-b">decidedly more</span> efficient in the mornings, whereas my concentration tends to wane in the evenings.', pt: 'Sou <span class="highlight-b">decididamente mais</span> eficiente pela manhã, enquanto minha concentração tende a diminuir à noite.', analysis: 'Usa "decidedly more" e "whereas" para contraste.' },
+          { level: 'C2', en: 'My cognitive performance is <span class="highlight-b">markedly superior</span> during morning hours, whereas evening work often proves <span class="highlight-b">substantially less</span> fruitful.', pt: 'Meu desempenho cognitivo é <span class="highlight-b">marcadamente superior</span> durante as horas da manhã, enquanto o trabalho noturno frequentemente se mostra <span class="highlight-b">substancialmente menos</span> frutífero.', analysis: 'Usa "markedly superior" e "substantially less fruitful" para comparações sofisticadas.' }
+        ],
+        'do you prefer studying or working': [
+          { level: 'B1', en: 'I prefer studying because I enjoy learning <span class="highlight-b">new things</span>.', pt: 'Prefiro estudar porque gosto de aprender <span class="highlight-b">coisas novas</span>.', analysis: 'Resposta simples com "because".' },
+          { level: 'B2', en: 'I lean towards studying as it allows me <span class="highlight-b">greater flexibility</span> and the opportunity to explore my intellectual interests.', pt: 'Pendo mais para estudar, pois me permite <span class="highlight-b">maior flexibilidade</span> e a oportunidade de explorar meus interesses intelectuais.', analysis: 'Usa "lean towards" e "greater flexibility" para expressões mais maduras.' },
+          { level: 'C1', en: 'I have a <span class="highlight-b">distinct preference</span> for studying, as it affords me the autonomy to delve into subjects that <span class="highlight-b">genuinely captivate</span> me.', pt: 'Tenho uma <span class="highlight-b">clara preferência</span> por estudar, pois me proporciona a autonomia para aprofundar em assuntos que <span class="highlight-b">genuinamente me cativam</span>.', analysis: 'Usa "distinct preference", "affords me" e "genuinely captivate" para nível C1.' },
+          { level: 'C2', en: 'My inclination <span class="highlight-b">decidedly favours</span> academic pursuits, as they offer <span class="highlight-b">unparalleled intellectual stimulation</span> and the freedom to <span class="highlight-b">cultivate expertise</span> in areas of personal fascination.', pt: 'Minha inclinação <span class="highlight-b">decididamente favorece</span> as atividades acadêmicas, pois oferecem <span class="highlight-b">estímulo intelectual incomparável</span> e a liberdade de <span class="highlight-b">cultivar expertise</span> em áreas de fascínio pessoal.', analysis: 'Usa "decidedly favours", "unparalleled intellectual stimulation" e "cultivate expertise" para nível C2.' }
+        ]
+      },
+      'change': {
+        'have your eating habits changed in recent years': [
+          { level: 'B1', en: 'Yes, I <span class="highlight-b">have changed</span> my eating habits. I eat more fruit now.', pt: 'Sim, <span class="highlight-b">mudei</span> meus hábitos alimentares. Como mais frutas agora.', analysis: 'Uso básico de present perfect "have changed".' },
+          { level: 'B2', en: 'My eating habits <span class="highlight-b">have undergone</span> a significant transformation; I <span class="highlight-b">have switched</span> to a much healthier diet.', pt: 'Meus hábitos alimentares <span class="highlight-b">passaram por</span> uma transformação significativa; <span class="highlight-b">mudei</span> para uma dieta muito mais saudável.', analysis: 'Usa "have undergone" e "have switched" para mudanças.' },
+          { level: 'C1', en: 'My dietary patterns <span class="highlight-b">have evolved considerably</span> over the past few years, as I <span class="highlight-b">have adopted</span> a more health-conscious approach to eating.', pt: 'Meus padrões alimentares <span class="highlight-b">evoluíram consideravelmente</span> nos últimos anos, pois <span class="highlight-b">adotei</span> uma abordagem mais consciente da saúde em relação à alimentação.', analysis: 'Usa "have evolved considerably" e "have adopted" com "health-conscious".' },
+          { level: 'C2', en: 'My eating habits <span class="highlight-b">have been completely revolutionised</span>; I have <span class="highlight-b">eschewed</span> processed foods entirely in favour of a <span class="highlight-b">predominantly plant-based</span> diet.', pt: 'Meus hábitos alimentares <span class="highlight-b">foram completamente revolucionados</span>; <span class="highlight-b">evitei</span> alimentos processados inteiramente em favor de uma dieta <span class="highlight-b">predominantemente baseada em vegetais</span>.', analysis: 'Usa "have been completely revolutionised", "eschewed" e "predominantly plant-based" para nível C2.' }
+        ],
+        'has your work changed in recent years': [
+          { level: 'B1', en: 'Yes, I <span class="highlight-b">have started</span> working from home.', pt: 'Sim, <span class="highlight-b">comecei</span> a trabalhar de casa.', analysis: 'Uso básico de present perfect "have started".' },
+          { level: 'B2', en: 'My work <span class="highlight-b">has evolved</span> significantly; I now work remotely and collaborate with international teams.', pt: 'Meu trabalho <span class="highlight-b">evoluiu</span> significativamente; agora trabalho remotamente e colaboro com equipes internacionais.', analysis: 'Usa "has evolved" e "collaborate" para descrever mudanças.' },
+          { level: 'C1', en: 'My professional role <span class="highlight-b">has undergone</span> a substantial transformation, as I <span class="highlight-b">have transitioned</span> to a fully remote position with global responsibilities.', pt: 'Meu papel profissional <span class="highlight-b">passou por</span> uma transformação substancial, pois <span class="highlight-b">transicionei</span> para uma posição totalmente remota com responsabilidades globais.', analysis: 'Usa "has undergone", "transitioned" e "global responsibilities".' },
+          { level: 'C2', en: 'My professional landscape <span class="highlight-b">has been fundamentally altered</span>; I have <span class="highlight-b">embraced</span> a telecommuting model that <span class="highlight-b">has enabled</span> unprecedented flexibility and cross-cultural collaboration.', pt: 'Minha paisagem profissional <span class="highlight-b">foi fundamentalmente alterada</span>; <span class="highlight-b">abracei</span> um modelo de teletrabalho que <span class="highlight-b">permitiu</span> flexibilidade sem precedentes e colaboração intercultural.', analysis: 'Usa "has been fundamentally altered", "embraced" e "unprecedented flexibility" para nível C2.' }
+        ]
+      },
+      'past': {
+        'how did you get here today': [
+          { level: 'B1', en: 'I <span class="highlight-b">came</span> here by train. It <span class="highlight-b">was</span> very comfortable.', pt: '<span class="highlight-b">Vim</span> aqui de trem. <span class="highlight-b">Foi</span> muito confortável.', analysis: 'Uso básico de passado simples "came" e "was".' },
+          { level: 'B2', en: 'I <span class="highlight-b">travelled</span> here by train, which <span class="highlight-b">was</span> remarkably efficient and comfortable.', pt: '<span class="highlight-b">Viajei</span> aqui de trem, que <span class="highlight-b">foi</span> notavelmente eficiente e confortável.', analysis: 'Usa "travelled" e "remarkably" para descrever a experiência.' },
+          { level: 'C1', en: 'I <span class="highlight-b">opted</span> to take the train, as it <span class="highlight-b">proved</span> to be the most convenient mode of transport, <span class="highlight-b">affording</span> me time to prepare for the day ahead.', pt: '<span class="highlight-b">Optei</span> por pegar o trem, pois <span class="highlight-b">provou ser</span> o meio de transporte mais conveniente, <span class="highlight-b">proporcionando-me</span> tempo para me preparar para o dia que viria.', analysis: 'Usa "opted", "proved" e "affording" para narrativa mais elaborada.' },
+          { level: 'C2', en: 'I <span class="highlight-b">commuted</span> via rail, a choice that <span class="highlight-b">proved judicious</span> as it <span class="highlight-b">afforded</span> me the opportunity to <span class="highlight-b">peruse</span> essential documents prior to my arrival.', pt: '<span class="highlight-b">Vim</span> via ferrovia, uma escolha que <span class="highlight-b">se mostrou criteriosa</span>, pois <span class="highlight-b">proporcionou-me</span> a oportunidade de <span class="highlight-b">examinar</span> documentos essenciais antes da minha chegada.', analysis: 'Usa "commuted", "proved judicious", "afforded" e "peruse" para nível C2.' }
+        ],
+        'why did you choose to do the type of work that you do': [
+          { level: 'B1', en: 'I <span class="highlight-b">chose</span> this job because I like helping people.', pt: '<span class="highlight-b">Escolhi</span> este trabalho porque gosto de ajudar as pessoas.', analysis: 'Uso básico de passado simples "chose" com "because".' },
+          { level: 'B2', en: 'I <span class="highlight-b">was drawn</span> to this profession because I <span class="highlight-b">have always been</span> passionate about making a positive impact on people\'s lives.', pt: '<span class="highlight-b">Fui atraído</span> por esta profissão porque <span class="highlight-b">sempre fui</span> apaixonado por causar um impacto positivo na vida das pessoas.', analysis: 'Usa "was drawn" e "have always been" para expressar motivação.' },
+          { level: 'C1', en: 'I <span class="highlight-b">opted</span> for this career path, as I <span class="highlight-b">felt a profound calling</span> to contribute meaningfully to society through my work.', pt: '<span class="highlight-b">Optei</span> por esta carreira, pois <span class="highlight-b">sentia um chamado profundo</span> para contribuir significativamente para a sociedade através do meu trabalho.', analysis: 'Usa "opted", "felt a profound calling" e "contribute meaningfully".' },
+          { level: 'C2', en: 'My career choice <span class="highlight-b">was predicated upon</span> a deep-seated desire to <span class="highlight-b">effectuate</span> tangible change, a conviction that <span class="highlight-b">has been</span> the <span class="highlight-b">driving force</span> behind my professional trajectory.', pt: 'Minha escolha de carreira <span class="highlight-b">foi baseada em</span> um desejo profundo de <span class="highlight-b">efetuar</span> mudanças tangíveis, uma convicção que <span class="highlight-b">tem sido</span> a <span class="highlight-b">força motriz</span> por trás da minha trajetória profissional.', analysis: 'Usa "was predicated upon", "effectuate" e "driving force" para nível C2.' }
+        ]
+      },
+      'frequency': {
+        'do you often use public transportation': [
+          { level: 'B1', en: 'Yes, I <span class="highlight-b">often</span> take the bus. I use it <span class="highlight-b">on a daily basis</span>.', pt: 'Sim, <span class="highlight-b">frequentemente</span> pego o ônibus. Uso-o <span class="highlight-b">diariamente</span>.', analysis: 'Uso básico de advérbios de frequência.' },
+          { level: 'B2', en: 'I <span class="highlight-b">regularly</span> utilise public transport, <span class="highlight-b">particularly</span> the metro system, which is <span class="highlight-b">remarkably</span> efficient.', pt: '<span class="highlight-b">Regularmente</span> utilizo transporte público, <span class="highlight-b">particularmente</span> o metrô, que é <span class="highlight-b">notavelmente</span> eficiente.', analysis: 'Usa "regularly", "particularly" e "remarkably" para variedade.' },
+          { level: 'C1', en: 'I <span class="highlight-b">habitually</span> rely on public transportation, <span class="highlight-b">often</span> preferring the underground system for its <span class="highlight-b">unparalleled</span> efficiency and reliability.', pt: '<span class="highlight-b">Habitualmente</span> dependo do transporte público, <span class="highlight-b">frequentemente</span> preferindo o metrô por sua eficiência e confiabilidade <span class="highlight-b">inigualáveis</span>.', analysis: 'Usa "habitually", "often" e "unparalleled" para expressões mais sofisticadas.' },
+          { level: 'C2', en: 'My <span class="highlight-b">customary</span> mode of transport is the metro, which I <span class="highlight-b">avail myself of</span> on a <span class="highlight-b">near-daily</span> basis, as it <span class="highlight-b">invariably</span> proves to be the most expedient option.', pt: 'Meu meio de transporte <span class="highlight-b">habitual</span> é o metrô, do qual me <span class="highlight-b">utilizo</span> em base <span class="highlight-b">quase diária</span>, pois <span class="highlight-b">invariavelmente</span> se mostra a opção mais expedita.', analysis: 'Usa "customary", "avail myself of", "near-daily" e "invariably" para nível C2.' }
+        ],
+        'how often do you travel': [
+          { level: 'B1', en: 'I travel <span class="highlight-b">about twice a year</span>.', pt: 'Viajo <span class="highlight-b">cerca de duas vezes por ano</span>.', analysis: 'Expressão básica de frequência.' },
+          { level: 'B2', en: 'I <span class="highlight-b">typically</span> travel <span class="highlight-b">two or three times</span> annually, <span class="highlight-b">usually</span> during holiday periods.', pt: '<span class="highlight-b">Geralmente</span> viajo <span class="highlight-b">duas ou três vezes</span> ao ano, <span class="highlight-b">normalmente</span> durante os períodos de férias.', analysis: 'Usa "typically", "two or three times" e "usually" para variedade.' },
+          { level: 'C1', en: 'I <span class="highlight-b">generally</span> embark on <span class="highlight-b">two to three</span> trips per year, <span class="highlight-b">frequently</span> taking advantage of extended weekends.', pt: '<span class="highlight-b">Geralmente</span> embarco em <span class="highlight-b">duas a três</span> viagens por ano, <span class="highlight-b">frequentemente</span> aproveitando fins de semana prolongados.', analysis: 'Usa "generally", "two to three" e "frequently" para expressões mais refinadas.' },
+          { level: 'C2', en: 'My travel frequency <span class="highlight-b">averages</span> approximately <span class="highlight-b">two to three</span> excursions per annum, <span class="highlight-b">predominantly</span> during periods of <span class="highlight-b">prolonged</span> leave.', pt: 'Minha frequência de viagem <span class="highlight-b">é em média</span> de aproximadamente <span class="highlight-b">duas a três</span> excursões por ano, <span class="highlight-b">predominantemente</span> durante períodos de licença <span class="highlight-b">prolongada</span>.', analysis: 'Usa "averages", "per annum", "predominantly" e "prolonged" para nível C2.' }
+        ]
+      },
+      'hypothetical': {
+        'if you could take a holiday anywhere in the world where would you go': [
+          { level: 'B1', en: 'I <span class="highlight-b">would go</span> to Italy because I love the food.', pt: '<span class="highlight-b">Iria</span> para a Itália porque adoro a comida.', analysis: 'Uso básico de "would" para expressar desejo.' },
+          { level: 'B2', en: 'If I <span class="highlight-b">had</span> the opportunity, I <span class="highlight-b">would definitely</span> visit Japan, as I\'m fascinated by the culture.', pt: 'Se <span class="highlight-b">tivesse</span> a oportunidade, <span class="highlight-b">definitivamente visitaria</span> o Japão, pois sou fascinado pela cultura.', analysis: 'Usa segunda condicional com "would definitely".' },
+          { level: 'C1', en: '<span class="highlight-b">Were I</span> to have the chance, I <span class="highlight-b">would undoubtedly</span> choose to explore the cultural riches of Southeast Asia, <span class="highlight-b">particularly</span> Thailand.', pt: '<span class="highlight-b">Se tivesse</span> a chance, <span class="highlight-b">indubitavelmente escolheria</span> explorar as riquezas culturais do Sudeste Asiático, <span class="highlight-b">particularmente</span> a Tailândia.', analysis: 'Usa "Were I to" (inversão condicional) e "undoubtedly" para nível C1.' },
+          { level: 'C2', en: '<span class="highlight-b">Had I</span> the liberty to choose any destination, I <span class="highlight-b">would be inclined</span> to embark on a <span class="highlight-b">sojourn</span> through the <span class="highlight-b">archipelagos</span> of Southeast Asia, <span class="highlight-b">immersing myself</span> in the <span class="highlight-b">myriad</span> cultural experiences they offer.', pt: '<span class="highlight-b">Se tivesse</span> a liberdade de escolher qualquer destino, <span class="highlight-b">estaria inclinado</span> a embarcar em uma <span class="highlight-b">estadia</span> pelos <span class="highlight-b">arquipélagos</span> do Sudeste Asiático, <span class="highlight-b">mergulhando-me</span> nas <span class="highlight-b">inúmeras</span> experiências culturais que oferecem.', analysis: 'Usa "Had I" (inversão), "sojourn", "archipelagos", "immersing myself" e "myriad" para nível C2.' }
+        ],
+        'what would you do if you had more free time': [
+          { level: 'B1', en: 'If I had more free time, I <span class="highlight-b">would travel</span> more.', pt: 'Se tivesse mais tempo livre, <span class="highlight-b">viajaria</span> mais.', analysis: 'Uso básico da segunda condicional.' },
+          { level: 'B2', en: 'If I <span class="highlight-b">had</span> additional free time, I <span class="highlight-b">would take up</span> a new hobby, such as painting, and I <span class="highlight-b">would spend</span> more quality time with my family.', pt: 'Se <span class="highlight-b">tivesse</span> mais tempo livre, <span class="highlight-b">começaria</span> um novo hobby, como pintura, e <span class="highlight-b">passaria</span> mais tempo de qualidade com minha família.', analysis: 'Usa "take up" e "quality time" para expressões mais maduras.' },
+          { level: 'C1', en: '<span class="highlight-b">Were I</span> to have more leisure time, I <span class="highlight-b">would undoubtedly</span> pursue creative endeavours, <span class="highlight-b">such as</span> painting, and I <span class="highlight-b">would devote</span> more time to <span class="highlight-b">cultivating</span> meaningful relationships.', pt: '<span class="highlight-b">Se tivesse</span> mais tempo de lazer, <span class="highlight-b">indubitavelmente</span> buscaria empreendimentos criativos, <span class="highlight-b">como</span> pintura, e <span class="highlight-b">dedicaria</span> mais tempo a <span class="highlight-b">cultivar</span> relacionamentos significativos.', analysis: 'Usa "Were I to", "undoubtedly", "cultivating" e "meaningful relationships" para nível C1.' },
+          { level: 'C2', en: '<span class="highlight-b">Had I</span> an abundance of free time, I <span class="highlight-b">would be inclined</span> to <span class="highlight-b">immerse myself</span> in the arts, <span class="highlight-b">particularly</span> painting, and I <span class="highlight-b">would prioritise</span> fostering <span class="highlight-b">profound</span> connections with loved ones.', pt: '<span class="highlight-b">Se tivesse</span> uma abundância de tempo livre, <span class="highlight-b">estaria inclinado</span> a <span class="highlight-b">mergulhar-me</span> nas artes, <span class="highlight-b">particularmente</span> pintura, e <span class="highlight-b">priorizaria</span> fomentar conexões <span class="highlight-b">profundas</span> com entes queridos.', analysis: 'Usa "Had I", "immerse myself", "particularly", "prioritise" e "profound" para nível C2.' }
+        ]
+      }
     };
-    return examples[cat] || examples['comparing'];
+
+    // Buscar exemplos específicos
+    let matchedExamples = null;
+    if (specificExamples[cat]) {
+      for (const [key, examples] of Object.entries(specificExamples[cat])) {
+        if (q.includes(key)) {
+          matchedExamples = examples;
+          break;
+        }
+      }
+    }
+
+    // Se não encontrar exemplos específicos, usar exemplos genéricos da categoria
+    if (!matchedExamples) {
+      const genericExamples = {
+        'comparing': [
+          { level: 'B1', en: 'I prefer X because it\'s <span class="highlight-b">better</span>.', pt: 'Prefiro X porque é <span class="highlight-b">melhor</span>.', analysis: 'Comparação simples com "better".' },
+          { level: 'B2', en: 'I tend to prefer X, as it\'s <span class="highlight-b">not as</span> expensive and <span class="highlight-b">equally</span> convenient.', pt: 'Costumo preferir X, pois não é <span class="highlight-b">tão</span> caro e é <span class="highlight-b">igualmente</span> conveniente.', analysis: 'Usa "not as" e "equally" para comparações equilibradas.' },
+          { level: 'C1', en: 'While X is <span class="highlight-b">undoubtedly more</span> practical, Y offers a <span class="highlight-b">far superior</span> experience.', pt: 'Embora X seja <span class="highlight-b">indubitavelmente mais</span> prático, Y oferece uma experiência <span class="highlight-b">muito superior</span>.', analysis: 'Usa "undoubtedly more" e "far superior" para contraste.' },
+          { level: 'C2', en: 'X is <span class="highlight-b">by far the most</span> logical choice, yet Y presents <span class="highlight-b">virtually unparalleled</span> opportunities.', pt: 'X é <span class="highlight-b">de longe a escolha mais</span> lógica, mas Y apresenta oportunidades <span class="highlight-b">praticamente inigualáveis</span>.', analysis: 'Usa "by far the most" e "virtually unparalleled" para nível C2.' }
+        ],
+        'change': [
+          { level: 'B1', en: 'I <span class="highlight-b">have changed</span> my habits.', pt: '<span class="highlight-b">Mudei</span> meus hábitos.', analysis: 'Uso básico de present perfect.' },
+          { level: 'B2', en: 'My habits <span class="highlight-b">have evolved</span> significantly over time.', pt: 'Meus hábitos <span class="highlight-b">evoluíram</span> significativamente ao longo do tempo.', analysis: 'Usa "have evolved" para descrever mudanças.' },
+          { level: 'C1', en: 'My lifestyle <span class="highlight-b">has undergone</span> a substantial transformation in recent years.', pt: 'Meu estilo de vida <span class="highlight-b">passou por</span> uma transformação substancial nos últimos anos.', analysis: 'Usa "has undergone" e "substantial transformation".' },
+          { level: 'C2', en: 'My daily routine <span class="highlight-b">has been fundamentally restructured</span>; I have <span class="highlight-b">embraced</span> a new approach to time management.', pt: 'Minha rotina diária <span class="highlight-b">foi fundamentalmente reestruturada</span>; <span class="highlight-b">abracei</span> uma nova abordagem para a gestão do tempo.', analysis: 'Usa "has been fundamentally restructured" e "embraced" para nível C2.' }
+        ],
+        'past': [
+          { level: 'B1', en: 'I <span class="highlight-b">visited</span> my family last weekend.', pt: '<span class="highlight-b">Visitei</span> minha família no fim de semana passado.', analysis: 'Uso básico de passado simples.' },
+          { level: 'B2', en: 'I <span class="highlight-b">travelled</span> to Italy last summer, which <span class="highlight-b">was</span> an unforgettable experience.', pt: '<span class="highlight-b">Viajei</span> para a Itália no verão passado, o que <span class="highlight-b">foi</span> uma experiência inesquecível.', analysis: 'Usa "travelled" e "was" com adjetivo "unforgettable".' },
+          { level: 'C1', en: 'I <span class="highlight-b">opted</span> to relocate abroad, a decision that <span class="highlight-b">proved</span> to be life-changing.', pt: '<span class="highlight-b">Optei</span> por me mudar para o exterior, uma decisão que <span class="highlight-b">provou ser</span> transformadora.', analysis: 'Usa "opted" e "proved" para narrativa mais elaborada.' },
+          { level: 'C2', en: 'I <span class="highlight-b">embarked upon</span> a journey that <span class="highlight-b">would ultimately</span> reshape my perspective on life and career.', pt: '<span class="highlight-b">Embarquei em</span> uma jornada que <span class="highlight-b">acabaria por</span> remodelar minha perspectiva sobre a vida e a carreira.', analysis: 'Usa "embarked upon" e "would ultimately reshape" para nível C2.' }
+        ],
+        'frequency': [
+          { level: 'B1', en: 'I <span class="highlight-b">always</span> do this activity.', pt: '<span class="highlight-b">Sempre</span> faço esta atividade.', analysis: 'Uso básico de advérbio de frequência.' },
+          { level: 'B2', en: 'I <span class="highlight-b">typically</span> do this, though I <span class="highlight-b">occasionally</span> try something different.', pt: '<span class="highlight-b">Geralmente</span> faço isso, embora <span class="highlight-b">ocasionalmente</span> tente algo diferente.', analysis: 'Usa "typically" e "occasionally" para variedade.' },
+          { level: 'C1', en: 'I <span class="highlight-b">habitually</span> engage in this activity, <span class="highlight-b">more often than not</span> preferring it to alternatives.', pt: '<span class="highlight-b">Habitualmente</span> me envolvo nesta atividade, <span class="highlight-b">na maioria das vezes</span> preferindo-a a alternativas.', analysis: 'Usa "habitually" e "more often than not" para expressões sofisticadas.' },
+          { level: 'C2', en: 'This activity <span class="highlight-b">constitutes</span> a <span class="highlight-b">near-constant</span> feature of my routine, <span class="highlight-b">rarely</span> being supplanted by other pursuits.', pt: 'Esta atividade <span class="highlight-b">constitui</span> uma característica <span class="highlight-b">quase constante</span> da minha rotina, <span class="highlight-b">raramente</span> sendo suplantada por outras atividades.', analysis: 'Usa "constitutes", "near-constant" e "rarely" para nível C2.' }
+        ],
+        'hypothetical': [
+          { level: 'B1', en: 'I <span class="highlight-b">would like</span> to do that.', pt: '<span class="highlight-b">Gostaria</span> de fazer isso.', analysis: 'Uso básico de "would like".' },
+          { level: 'B2', en: 'If I <span class="highlight-b">had</span> the chance, I <span class="highlight-b">would definitely</span> try that.', pt: 'Se <span class="highlight-b">tivesse</span> a chance, <span class="highlight-b">definitivamente tentaria</span> isso.', analysis: 'Usa segunda condicional com "would definitely".' },
+          { level: 'C1', en: '<span class="highlight-b">Were I</span> given the opportunity, I <span class="highlight-b">would undoubtedly</span> pursue that path.', pt: '<span class="highlight-b">Se me fosse</span> dada a oportunidade, <span class="highlight-b">indubitavelmente</span> seguiria esse caminho.', analysis: 'Usa "Were I" (inversão) e "undoubtedly".' },
+          { level: 'C2', en: '<span class="highlight-b">Had I</span> the means and the opportunity, I <span class="highlight-b">would be inclined</span> to <span class="highlight-b">embark upon</span> that endeavour with considerable enthusiasm.', pt: '<span class="highlight-b">Se tivesse</span> os meios e a oportunidade, <span class="highlight-b">estaria inclinado</span> a <span class="highlight-b">embarcar</span> nesse empreendimento com entusiasmo considerável.', analysis: 'Usa "Had I", "would be inclined", "embark upon" e "considerable enthusiasm" para nível C2.' }
+        ]
+      };
+      matchedExamples = genericExamples[cat] || [
+        { level: 'B1', en: 'Try to answer with a simple sentence.', pt: 'Tente responder com uma frase simples.', analysis: 'Use a estrutura: Sujeito + Verbo + Complemento.' },
+        { level: 'B2', en: 'Add more information using "because" or "and".', pt: 'Adicione mais informações usando "because" ou "and".', analysis: 'Use conectores para dar mais detalhes.' },
+        { level: 'C1', en: 'Use adverbs and connectors for a more sophisticated response.', pt: 'Use advérbios e conectores para uma resposta mais sofisticada.', analysis: 'Adicione "however", "moreover", "nevertheless" para fluência.' },
+        { level: 'C2', en: 'Use advanced vocabulary and complex structures.', pt: 'Use vocabulário avançado e estruturas complexas.', analysis: 'Incorpore inversões, frases condicionais e vocabulário de nível C2.' }
+      ];
+    }
+
+    return matchedExamples;
   }
 
   function getStructureTip(cat) {
@@ -772,11 +992,11 @@
 
   function getVocabulary(cat) {
     const vocab = {
-      'comparing': '<span class="highlight">much more, far less, equally, slightly, considerably, virtually, by far, nowhere near, whereas, while</span>',
-      'change': '<span class="highlight">recently, lately, over the past, since, for, already, yet, just, ever, never, used to, have become</span>',
-      'past': '<span class="highlight">ago, last, yesterday, when, while, as, during, before, after, already, yet, had, would have</span>',
-      'frequency': '<span class="highlight">always, usually, often, sometimes, occasionally, rarely, never, every day, once a week, on a daily basis, more often than not</span>',
-      'hypothetical': '<span class="highlight">would, could, might, if I were, were I to, had I, suppose, imagine, in case, otherwise</span>'
+      'comparing': '<span class="highlight">much more, far less, equally, slightly, considerably, virtually, by far, nowhere near, whereas, while, undeniably, significantly, markedly, superior, inferior</span>',
+      'change': '<span class="highlight">recently, lately, over the past, since, for, already, yet, just, ever, never, used to, have become, have undergone, have evolved, have transformed</span>',
+      'past': '<span class="highlight">ago, last, yesterday, when, while, as, during, before, after, already, yet, had, would have, previously, formerly, initially, ultimately</span>',
+      'frequency': '<span class="highlight">always, usually, often, sometimes, occasionally, rarely, never, every day, once a week, on a daily basis, more often than not, habitually, customarily, invariably, typically</span>',
+      'hypothetical': '<span class="highlight">would, could, might, if I were, were I to, had I, suppose, imagine, in case, otherwise, undoubtedly, definitely, certainly, perhaps</span>'
     };
     return vocab[cat] || 'Use vocabulário apropriado para a categoria.';
   }
